@@ -5,21 +5,6 @@
         $usuarios[]=fgets($archivoUsuarios);
     }
     fclose($archivoUsuarios);
-
-    // $urlMemes=array();
-    // $archivoUrlMemes=fopen("data/urlMemes.csv","r");
-    // while(!feof($archivoUrlMemes)){
-    //   $urlMemes[]=fgets($archivoUrlMemes);
-    // }
-    // fclose($archivoUrlMemes);
-
-    // $memesRegistrados=array();
-    // $archivoMemesRegistrados=fopen("data/memesRegistrados.csv","r");
-    // while(!feof($archivoMemesRegistrados)){
-    //   $memesRegistrados[]=fgets($archivoMemesRegistrados);
-    // }
-    // fclose($archivoMemesRegistrados);
-
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +120,7 @@
                 <tr>
                   <td>
                     Calificacion:
-                    <input id="txt-puntuacion" id="txt-calificacion" type="text" class="form-control" placeholder="Calificacion del meme">
+                    <input id="txt-calificacion" type="text" class="form-control" placeholder="Calificacion del meme">
                   </td>
                 </tr>
                 <tr>

@@ -3,9 +3,10 @@
 	
 	$archivo = fopen("../data/memes.csv", "a+");
 	fwrite($archivo, 
+		$_POST["txt-codigo"].",".
 		$_POST["txt-descripcion"].",".
 		$_POST["rbt-foto"].",".
-		$_POST["txt-puntuacion"].",".
+		$_POST["txt-calificacion"].",".
 		$_POST["slc-imagen"]."\n"
 	);
 	fclose($archivo);
@@ -15,13 +16,14 @@
 	echo '    <strong>'.$_POST["rbt-foto"].'</strong>';
 	echo '    <p>'.$_POST["txt-descripcion"].'</p>';
 	echo '    <img src="'.$_POST["slc-imagen"].'" class="img-responsive">';
-	echo '    <span class="badge">Puntos: '.$_POST["txt-puntuacion"].'</span>';
+	echo '    <span class="badge">Calificacion:<span class="glyphicon glyphicon-star" aria-hidden="true"></span> '.$_POST["txt-calificacion"].'</span>';
 	echo '    <span class="badge">Comentarios: 6666</span>';
 	echo '    <p>';
 	echo '      <hr>';
 	echo '      <h4>Comentarios:</h4>';
-	echo '		<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
-	echo '	 <input type = "button" value="Comentar" class="btn btn-default" onclick="comentar(\'      Puede enviar por aquí el codigo del meme\');">';
+	echo ' 		<div id="div-comentario-'.$_POST["txt-codigo"].'"></div>';
+	echo '<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
+	echo '<input type = "button" value="Comentar" class="btn btn-default" onclick=comentar("'.$_POST["txt-codigo"].'");>';
 	echo '    </p>';
 	echo '  </div>';
 	echo '</div>';
