@@ -15,7 +15,7 @@
 		echo '      <hr>';
 		echo '      <h4>Comentarios:</h4>';
 		echo ' 		<div id="div-comentario-'.$partes[0].'"></div>';
-		echo '<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
+		echo '<textarea id="txt-comentario-'.$partes[0].'" class="form-control" placeholder="Nuevo comentario"></textarea>';
 		echo '<input type = "button" value="Comentar" class="btn btn-default" onclick=comentar("' . $partes[0].'");>';
 		echo '    </p>';
 		echo '  </div>';

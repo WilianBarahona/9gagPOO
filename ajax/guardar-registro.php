@@ -22,7 +22,7 @@
 	echo '      <hr>';
 	echo '      <h4>Comentarios:</h4>';
 	echo ' 		<div id="div-comentario-'.$_POST["txt-codigo"].'"></div>';
-	echo '<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
+	echo '<textarea id="txt-comentario-'.$_POST["txt-codigo"].'" class="form-control" placeholder="Nuevo comentario"></textarea>';
 	echo '<input type = "button" value="Comentar" class="btn btn-default" onclick=comentar("'.$_POST["txt-codigo"].'");>';
 	echo '    </p>';
 	echo '  </div>';

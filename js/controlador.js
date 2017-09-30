@@ -1,24 +1,25 @@
 function comentar(codigo){
 	alert(codigo)
-	// var obtenerDiv="div-comentario-"+codigo;
-	// var obtenerDivTextComentario="txt-comentario-"+codigo;
-	// var idTextComentario="#"+obtenerDivTextComentario;
-	// var parametros =
-	// 	"txt-codigo="+codigo+"&"+
-	// 	"rbt-foto="+$("input[type='radio'][name='rbt-foto']:checked").val()+"&"+
-	// 	obtenerDivTextComentario+"="+$(idTextComentario).val();
-	// //alert("Parametros: " + parametros);
-	// $.ajax({
-	// 	url:"ajax/procesar-comentarios.php",
-	// 	data:parametros,
-	// 	method:"POST",
-	// 	success:function(respuesta){
-	// 		$("#div-memes").html(respuesta  +  $("#div-memes").html());
-	// 	},
-	// 	error:function(e){
-	// 		alert("Error: "+e);
-	// 	}
-	// });
+	var obtenerDiv="div-comentario-"+codigo;
+	var obtenerDivTextComentario="txt-comentario-"+codigo;
+	var idTextComentario="#"+obtenerDivTextComentario;
+	alert($(idTextComentario).val())
+	var parametros =
+		"txt-codigo="+codigo+"&"+
+		"rbt-foto="+$("input[type='radio'][name='rbt-foto']:checked").val()+"&"+
+		obtenerDivTextComentario+"="+$(idTextComentario).val();
+	alert("Parametros: " + parametros);
+	$.ajax({
+		url:"ajax/procesar-comentarios.php",
+		data:parametros,
+		method:"POST",
+		success:function(respuesta){
+			$("#div-memes").html(respuesta  +  $("#div-memes").html());
+		},
+		error:function(e){
+			alert("Error: "+e);
+		}
+	});
 }
 
 $("#btn-registrar").click(function(){
