@@ -1,20 +1,21 @@
 function comentar(codigo){
-	alert(codigo)
+	//alert(codigo)
 	var obtenerDiv="div-comentario-"+codigo;
+	var idObtenerDiv="#"+obtenerDiv;
 	var obtenerDivTextComentario="txt-comentario-"+codigo;
 	var idTextComentario="#"+obtenerDivTextComentario;
-	alert($(idTextComentario).val())
+	//alert($(idTextComentario).val())
 	var parametros =
 		"txt-codigo="+codigo+"&"+
 		"rbt-foto="+$("input[type='radio'][name='rbt-foto']:checked").val()+"&"+
-		obtenerDivTextComentario+"="+$(idTextComentario).val();
-	alert("Parametros: " + parametros);
+		"txt-comentario"+"="+$(idTextComentario).val();
+	//alert("Parametros: " + parametros);
 	$.ajax({
 		url:"ajax/procesar-comentarios.php",
 		data:parametros,
 		method:"POST",
 		success:function(respuesta){
-			$("#div-memes").html(respuesta  +  $("#div-memes").html());
+			$(idObtenerDiv).html(respuesta  +  $(idObtenerDiv).html());
 		},
 		error:function(e){
 			alert("Error: "+e);

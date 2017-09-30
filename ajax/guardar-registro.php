@@ -11,7 +11,7 @@
 	);
 	fclose($archivo);
 
-	echo '<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">';
+	echo '<div class="col-lg-6 col-sm-12 col-xs-12 col-md-6">';
 	echo '  <div class="well">';
 	echo '    <strong>'.$_POST["rbt-foto"].'</strong>';
 	echo '    <p>'.$_POST["txt-descripcion"].'</p>';

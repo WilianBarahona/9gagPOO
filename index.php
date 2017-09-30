@@ -59,39 +59,7 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-          <h2>Memes Registrados</h2>
-          <p>
-            <div class="container-fluid">
-              <div class="row" id="div-memes">
-                <!--
-                <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
-                  <div class="well">
-                    <strong>Usuario 1</strong>
-                    <p>Esta es la descripción del meme.</p>
-                    <img src="img/memes/meme_01.jpg" class="img-responsive">
-                    <span class="badge">Puntos: 12345</span>
-                    <span class="badge">Comentarios: 2</span>
-                    <p>
-                      <hr>
-                      <h4>Comentarios:</h4>
-                      <div>
-                        <b>Usuario x</b>
-                        <p class="commentario">Este es el comentario</p>  
-                      </div>
-                      <div>
-                        <b>Usuario x</b>
-                        <p  class="commentario">Este es el comentario</p>  
-                      </div>
-                    </p>
-                  </div>
-                </div>
-                -->
-              </div>
-            </div>
-          </p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <h2>Registrar un meme</h2>
           <form method="POST">
             <table>
@@ -143,15 +111,8 @@
                 </tr>
                 <tr>
                   <td>
-                  <!--   <br>Comentarios: -->
-                    <!-- <input id="txt-usuario1" type="text" name="txt-usuario1" class="form-control" placeholder="Usuario 1">
-                    <input type="text" id="txt-comentario1" name="txt-comentario1" placeholder="Comentario 1" class="form-control"><br>
-                    <input id="txt-usuario2" type="text" name="txt-usuario2" class="form-control" placeholder="Usuario 2">
-                    <input type="text" id="txt-comentario2" name="txt-comentario2" placeholder="Comentario 2" class="form-control"><br>
-                    <input id="txt-usuario3" type="text" name="txt-usuario3" class="form-control" placeholder="Usuario 3"><input type="text" id="txt-comentario3" name="txt-comentario3" placeholder="Comentario 3" class="form-control"><br>
-                    <input id="txt-usuario4" type="text" name="txt-usuario4" class="form-control" placeholder="Usuario 4"><input type="text" id="txt-comentario4" name="txt-comentario4" placeholder="Comentario 4" class="form-control"><br>
-                    <input id="txt-usuario5" type="text" name="txt-usuario5" class="form-control" placeholder="Usuario 5"><input type="text" id="txt-comentario5" name="txt-comentario5" placeholder="Comentario 5" class="form-control"><br> -->
-                  </td>
+            
+                  <!-- </td> -->
                 </tr>
                 <tr>
                   <td>
@@ -163,6 +124,14 @@
               </table>            
           </form>
         </div>
+
+        <div id="div-memes">
+            <h2>Memes Registrados</h2>
+        </div>
+         </div>
+          </p>
+        </div>
+     
       </div>
 
       <hr>
