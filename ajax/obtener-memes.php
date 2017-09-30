@@ -14,14 +14,6 @@
 		echo '    <p>';
 		echo '      <hr>';
 		echo '      <h4>Comentarios:</h4>';
-		$partesComentarios = explode(":", $partes[4]);
-		for ($i=0;$i<sizeof($partesComentarios);$i++){
-			$usuarioComentario = explode("|", $partesComentarios[$i]);
-			echo '      <div>';
-			echo '        <b>'.$usuarioComentario[0].'</b>';
-			echo '        <p class="commentario">'.$usuarioComentario[1].'</p>  ';
-			echo '      </div>';
-		}
 		echo '<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
 		echo '<input type = "button" value="Comentar" class="btn btn-default" onclick="comentar(\'Puede enviar por aquí el codigo del meme\');">';
 		echo '    </p>';

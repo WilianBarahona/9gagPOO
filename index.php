@@ -1,3 +1,27 @@
+<?php
+    $usuarios=array();
+    $archivoUsuarios=fopen("data/usuarios.csv", "r");
+    while (!feof($archivoUsuarios)) {
+        $usuarios[]=fgets($archivoUsuarios);
+    }
+    fclose($archivoUsuarios);
+
+    // $urlMemes=array();
+    // $archivoUrlMemes=fopen("data/urlMemes.csv","r");
+    // while(!feof($archivoUrlMemes)){
+    //   $urlMemes[]=fgets($archivoUrlMemes);
+    // }
+    // fclose($archivoUrlMemes);
+
+    // $memesRegistrados=array();
+    // $archivoMemesRegistrados=fopen("data/memesRegistrados.csv","r");
+    // while(!feof($archivoMemesRegistrados)){
+    //   $memesRegistrados[]=fgets($archivoMemesRegistrados);
+    // }
+    // fclose($archivoMemesRegistrados);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,12 +39,6 @@
 
     <!-- Custom styles for this template -->
     <link href="css/jumbotron.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -87,28 +105,37 @@
               </div>
             </div>
           </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
           <h2>Registrar un meme</h2>
-          <form method="GET" action="procesar.php">
+          <form method="POST">
             <table>
               <tr>
-                <td>Descripcion Meme: <input id="txt-descripcion" name="txt-descripcion" type="text" class="form-control"></td>
+                <td>Codigo: <input type="text" id="txt-codigo" class="form-control" placeholder="Codigo del meme"></td>
+              </tr>
+              <tr>
+                <td>Descripcion Meme: <input id="txt-descripcion" name="txt-descripcion" type="text" class="form-control" placeholder="Descripcion del meme"></td>
               </tr>
               <tr>
                   <td>
                     <br>Usuario que registra el meme:<br>
-                    <label>Goku<input id="rbt-goku" type="radio" value="Goku" name="rbt-foto"><img src="img/goku.jpg" class="img-responsive img-circle"></label>
-                    <label>Gohan<input id="rbt-gohan" type="radio" value="Gohan" name="rbt-foto"><img src="img/gohan.jpg" class="img-responsive img-circle"></label>
-                    <label>Trunks<input id="rbt-trunks" type="radio" value="Trunks" name="rbt-foto"><img src="img/trunks.jpg" class="img-responsive img-circle"></label>
-                    <label>Vegeta<input id="rbt-vegeta" type="radio" value="Vegeta" name="rbt-foto"><img src="img/vegeta.jpg" class="img-responsive img-circle"></label>
+                    <?php 
+                      for ($i=0; $i <sizeof($usuarios); $i++) {
+                          $partes=explode(",",$usuarios[$i]);
+                          echo '<label>'.
+                               $partes[0].
+                               '<input type="radio" value="'.$partes[0].'" name="rbt-foto">'.
+                               '<img src="'.$partes[1].'" class="img-responsive img-circle">'.
+                               '</label>';
+                      }
+
+                     ?>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    Puntuación:
-                    <input id="txt-puntuacion" name="txt-puntuacion" type="text" class="form-control">
+                    Calificacion:
+                    <input id="txt-puntuacion" id="txt-calificacion" type="text" class="form-control" placeholder="Calificacion del meme">
                   </td>
                 </tr>
                 <tr>
@@ -131,20 +158,20 @@
                 </tr>
                 <tr>
                   <td>
-                    <br>Comentarios:
-                    <input id="txt-usuario1" type="text" name="txt-usuario1" class="form-control" placeholder="Usuario 1"><input type="text" id="txt-comentario1" name="txt-comentario1" placeholder="Comentario 1" class="form-control"><br>
-                    <input id="txt-usuario2" type="text" name="txt-usuario2" class="form-control" placeholder="Usuario 2"><input type="text" id="txt-comentario2" name="txt-comentario2" placeholder="Comentario 2" class="form-control"><br>
+                  <!--   <br>Comentarios: -->
+                    <!-- <input id="txt-usuario1" type="text" name="txt-usuario1" class="form-control" placeholder="Usuario 1">
+                    <input type="text" id="txt-comentario1" name="txt-comentario1" placeholder="Comentario 1" class="form-control"><br>
+                    <input id="txt-usuario2" type="text" name="txt-usuario2" class="form-control" placeholder="Usuario 2">
+                    <input type="text" id="txt-comentario2" name="txt-comentario2" placeholder="Comentario 2" class="form-control"><br>
                     <input id="txt-usuario3" type="text" name="txt-usuario3" class="form-control" placeholder="Usuario 3"><input type="text" id="txt-comentario3" name="txt-comentario3" placeholder="Comentario 3" class="form-control"><br>
                     <input id="txt-usuario4" type="text" name="txt-usuario4" class="form-control" placeholder="Usuario 4"><input type="text" id="txt-comentario4" name="txt-comentario4" placeholder="Comentario 4" class="form-control"><br>
-                    <input id="txt-usuario5" type="text" name="txt-usuario5" class="form-control" placeholder="Usuario 5"><input type="text" id="txt-comentario5" name="txt-comentario5" placeholder="Comentario 5" class="form-control"><br>
+                    <input id="txt-usuario5" type="text" name="txt-usuario5" class="form-control" placeholder="Usuario 5"><input type="text" id="txt-comentario5" name="txt-comentario5" placeholder="Comentario 5" class="form-control"><br> -->
                   </td>
                 </tr>
                 <tr>
                   <td>
                     <br><br>
-                    <!--Este boton enviara la informacion de forma sincrona, recargara la página completamente-->
-                    <input type="submit" name="btn-registrar" value="Guardar Meme" class="btn btn-primary">
-                    <input type="button" name="btn-registrar-ajax" value="Guardar Meme" class="btn btn-primary" onclick="guardarRegistro();">
+                    <input type="button" id="btn-registrar" value="Guardar Meme" class="btn btn-primary">
                     <div id="div-respuesta"></div>
                   </td>
                 </tr>

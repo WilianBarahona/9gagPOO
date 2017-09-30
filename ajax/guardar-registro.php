@@ -6,21 +6,11 @@
 		$_POST["txt-descripcion"].",".
 		$_POST["rbt-foto"].",".
 		$_POST["txt-puntuacion"].",".
-		$_POST["slc-imagen"].",".
-		$_POST["txt-usuario1"]."|".
-		$_POST["txt-comentario1"].":".
-		$_POST["txt-usuario2"]."|".
-		$_POST["txt-comentario2"].":".
-		$_POST["txt-usuario3"]."|".
-		$_POST["txt-comentario3"].":".
-		$_POST["txt-usuario4"]."|".
-		$_POST["txt-comentario4"].":".
-		$_POST["txt-usuario5"]."|".
-		$_POST["txt-comentario5"]."\n"
+		$_POST["slc-imagen"]."\n"
 	);
 	fclose($archivo);
 
-	echo ' <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">';
+	echo '<div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">';
 	echo '  <div class="well">';
 	echo '    <strong>'.$_POST["rbt-foto"].'</strong>';
 	echo '    <p>'.$_POST["txt-descripcion"].'</p>';
@@ -30,26 +20,8 @@
 	echo '    <p>';
 	echo '      <hr>';
 	echo '      <h4>Comentarios:</h4>';
-	echo '      <div>';
-	echo '        <b>'.$_POST["txt-usuario1"].'</b>';
-	echo '        <p class="commentario">'.$_POST["txt-comentario1"].'</p>  ';
-	echo '      </div>';
-	echo '      <div>';
-	echo '        <b>'.$_POST["txt-usuario2"].'</b>';
-	echo '        <p class="commentario">'.$_POST["txt-comentario2"].'</p>  ';
-	echo '      </div>';
-	echo '      <div>';
-	echo '        <b>'.$_POST["txt-usuario3"].'</b>';
-	echo '        <p class="commentario">'.$_POST["txt-comentario3"].'</p>  ';
-	echo '      </div>';
-	echo '      <div>';
-	echo '        <b>'.$_POST["txt-usuario4"].'</b>';
-	echo '        <p class="commentario">'.$_POST["txt-comentario4"].'</p>  ';
-	echo '      </div>';
-	echo '      <div>';
-	echo '        <b>'.$_POST["txt-usuario5"].'</b>';
-	echo '        <p class="commentario">'.$_POST["txt-comentario5"].'</p>  ';
-	echo '      </div>';
+	echo '		<textarea class="form-control" placeholder="Nuevo comentario"></textarea>';
+	echo '	 <input type = "button" value="Comentar" class="btn btn-default" onclick="comentar(\'      Puede enviar por aquí el codigo del meme\');">';
 	echo '    </p>';
 	echo '  </div>';
 	echo '</div>';
