@@ -16,8 +16,12 @@
 	echo '    <strong>'.$_POST["rbt-foto"].'</strong>';
 	echo '    <p>'.$_POST["txt-descripcion"].'</p>';
 	echo '    <img src="'.$_POST["slc-imagen"].'" class="img-responsive">';
-	echo '    <span class="badge">Calificacion:<span class="glyphicon glyphicon-star" aria-hidden="true"></span> '.$_POST["txt-calificacion"].'</span>';
-	echo '    <span class="badge">Comentarios: 6666</span>';
+	echo 	'<span class="badge">Calificacion:';
+	for ($i=0; $i <$_POST["txt-calificacion"]; $i++) { 
+		echo	 '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+	}
+	echo	 '</span>';
+	echo '    <span class="badge">Comentarios: 0</span>';
 	echo '    <p>';
 	echo '      <hr>';
 	echo '      <h4>Comentarios:</h4>';

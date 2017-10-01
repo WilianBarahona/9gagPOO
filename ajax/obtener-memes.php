@@ -8,9 +8,11 @@
 		
 		if(is_file($ruta)){
 			$comentarios=array();
+			$numeroComentarios=-1;
 			$archivoComentarios=fopen($ruta, "r");
 			while (!feof($archivoComentarios)) {
 				 $comentarios[]=fgets($archivoComentarios);
+				 $numeroComentarios++;
 		    }
 		    fclose($archivoComentarios);
 			echo ' <div class="col-lg-6 col-sm-12 col-xs-12 col-md-6">';
@@ -18,8 +20,12 @@
 			echo '    <strong>'.$partes[2].'</strong>';
 			echo '    <p>'.$partes[1].'</p>';
 			echo '    <img src="'.$partes[4].'" class="img-responsive">';
-			echo '    <span class="badge">calificacion:<span class="glyphicon glyphicon-star"      aria-hidden="true"></span>'.$partes[3].'</span>';
-			echo '    <span class="badge">Comentarios: 5</span>';
+			echo 	'<span class="badge">Calificacion:';
+			for ($i=0; $i <$partes[3]; $i++) { 
+				echo	 '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+			}
+			echo	 '</span>';
+			echo '    <span class="badge">Comentarios:'.$numeroComentarios.'</span>';
 			echo '    <p>';
 			echo '      <hr>';
 			echo '      <h4>Comentarios:</h4>';
@@ -45,7 +51,11 @@
 			echo '    <strong>'.$partes[2].'</strong>';
 			echo '    <p>'.$partes[1].'</p>';
 			echo '    <img src="'.$partes[4].'" class="img-responsive">';
-			echo '    <span class="badge">calificacion:<span class="glyphicon glyphicon-star"      aria-hidden="true"></span>'.$partes[3].'</span>';
+			echo 	'<span class="badge">Calificacion:';
+			for ($i=0; $i <$partes[3]; $i++) { 
+				echo	 '<span class="glyphicon glyphicon-star" aria-hidden="true"></span>';
+			}
+			echo	 '</span>';
 			echo '    <span class="badge">Comentarios: 5</span>';
 			echo '    <p>';
 			echo '      <hr>';
